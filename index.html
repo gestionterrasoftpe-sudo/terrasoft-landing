@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerrasoftGestión - Sistema de Gestión para Organizaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        primaryDark: '#15803d',
+                        primaryLight: '#22c55e'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .gradient-green {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(22, 163, 74, 0.2);
+        }
+        
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+        }
+        
+        .screenshot-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900">
+    
+    <!-- Header/Navbar -->
+    <nav class="bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-primary">Terrasoft</span>
+                    <span class="text-2xl font-light text-white">Gestión</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beneficios" class="text-slate-300 hover:text-primary transition">Beneficios</a>
+                    <a href="#funcionalidades" class="text-slate-300 hover:text-primary transition">Funcionalidades</a>
+                    <a href="#precios" class="text-slate-300 hover:text-primary transition">Precios</a>
+                    <a href="#contacto" class="text-slate-300 hover:text-primary transition">Contacto</a>
+                </div>
+                <a href="https://wa.me/51923732863?text=Hola,%20quiero%20una%20demo%20de%20TerrasoftGestión" target="_blank" class="gradient-green text-white px-6 py-2.5 rounded-lg font-semibold transition hover:shadow-lg hover:shadow-primary/50">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-pattern text-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-block gradient-green backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg">
+                        🎉 Oferta de Lanzamiento - Solo 20 Cupos Disponibles
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight">
+                        Gestiona tu <br/>
+                        <span class="text-gradient">Organización</span><br/>
+                        Profesionalmente
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-slate-300 leading-relaxed">
+                        Sistema completo para <strong class="text-white">Juntas de Propietarios</strong>, <strong class="text-white">Centros Poblados</strong> y Organizaciones. Control total de socios, cuotas y reportes.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contacto" class="gradient-green text-white px-8 py-4 rounded-xl font-bold text-lg transition text-center pulse-btn shadow-2xl hover:shadow-primary/50">
+                            🚀 Prueba Gratis 30 Días
+                        </a>
+                        <a href="https://wa.me/51923732863?text=Hola,%20quiero%20una%20demo%20de%20TerrasoftGestión" target="_blank" class="glass-card text-white px-8 py-4 rounded-xl font-bold text-lg transition text-center hover:bg-white/10">
+                            📱 Ver Demo en Vivo
+                        </a>
+                    </div>
+                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-sm">
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Sin contratos largos
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Soporte en español
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Setup en 15 minutos
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-primaryLight rounded-3xl opacity-20 blur-2xl"></div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop" alt="Dashboard" class="relative rounded-2xl screenshot-shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-slate-900 py-12 -mt-10 relative z-10">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="glass-card rounded-2xl shadow-2xl p-8 border-slate-700">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">99%</div>
+                        <div class="text-slate-400 text-sm font-medium">Satisfacción</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">24/7</div>
+                        <div class="text-slate-400 text-sm font-medium">Disponibilidad</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">15min</div>
+                        <div class="text-slate-400 text-sm font-medium">Setup Rápido</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">S/. 99</div>
+                        <div class="text-slate-400 text-sm font-medium">Primer Mes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problemas que resuelve -->
+    <section id="beneficios" class="py-20 bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">¿Te suenan estos problemas?</h2>
+                <p class="text-xl text-slate-400">Deja de perder tiempo y dinero con métodos obsoletos</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl shadow-lg border-red-500/30 border-l-4 card-hover">
+                    <div class="text-5xl mb-4">😰</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Excel Complicado</h3>
+                    <p class="text-slate-300">Archivos desactualizados, fórmulas rotas y datos perdidos. ¿Te suena familiar?</p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl shadow-lg border-red-500/30 border-l-4 card-hover">
+                    <div class="text-5xl mb-4">❓</div>
+                    <h3 class="text-xl font-bold text-white mb-3">No Sabes Quién Debe</h3>
+                    <p class="text-slate-300">Horas buscando en cuadernos y hojas sueltas para saber el estado de cada socio.</p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl shadow-lg border-red-500/30 border-l-4 card-hover">
+                    <div class="text-5xl mb-4">📄</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Reportes Manuales</h3>
+                    <p class="text-slate-300">Días enteros preparando informes para asambleas. Sin control de versiones.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-block gradient-green px-8 py-4 rounded-full shadow-lg">
+                    <p class="text-white font-bold text-lg">✨ TerrasoftGestión elimina todos estos dolores de cabeza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades con Screenshots -->
+    <section id="funcionalidades" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">Todo lo que necesitas en un solo sistema</h2>
+                <p class="text-xl text-slate-400">Diseñado específicamente para organizaciones peruanas</p>
+            </div>
+
+            <!-- Feature 1: Dashboard -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        📊 Dashboard Inteligente
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-white mb-6">Toda tu información en un vistazo</h3>
+                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                        Visualiza métricas clave, socios activos, aportes del mes y proyectos en tiempo real. Gráficos profesionales que se actualizan automáticamente.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Métricas en tiempo real:</strong> Socios activos, aportes, proyectos y deudas</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Gráficos visuales:</strong> Ingresos vs Egresos, tendencias de pago</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Filtros inteligentes:</strong> 7, 30, 90 días o personalizado</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primaryLight/20 rounded-3xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Dashboard" class="relative rounded-xl screenshot-shadow">
+                </div>
+            </div>
+
+            <!-- Feature 2: Gestión de Socios -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop" alt="Gestión de Socios" class="relative rounded-xl screenshot-shadow">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-block bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        👥 Padrón Digital
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-white mb-6">Control completo de socios</h3>
+                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                        Registro completo con fotos, documentos y toda la información en un solo lugar. Búsqueda instantánea y filtros avanzados.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Perfil completo:</strong> Foto, DNI, celular, delegado, manzana</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Vista detallada:</strong> Historial de aportes, asistencias y faenas</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Búsqueda poderosa:</strong> Por nombre, DNI o código</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: Aportes y Libro Caja -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="inline-block bg-purple-500/20 text-purple-400 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        💰 Control Financiero
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-white mb-6">Gestión de aportes y libro caja</h3>
+                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                        Registra pagos, controla deudores y mantén un libro caja profesional con ingresos y egresos detallados.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Aportes ordinarios y extraordinarios</strong> con métodos de pago</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Libro caja profesional:</strong> Balance en tiempo real</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Reportes de deudores</strong> automáticos</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=500&fit=crop" alt="Libro Caja" class="relative rounded-xl screenshot-shadow">
+                </div>
+            </div>
+
+            <!-- Grid de características adicionales -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                <div class="glass-card p-8 rounded-2xl card-hover border-orange-500/30 border-t-4">
+                    <div class="bg-orange-500/20 text-orange-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        📊
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Reportes en PDF</h3>
+                    <p class="text-slate-300">Genera reportes profesionales en segundos. Padrón, aportes, deudores, proyectos y más.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl card-hover border-teal-500/30 border-t-4">
+                    <div class="bg-teal-500/20 text-teal-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        📁
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gestión de Proyectos</h3>
+                    <p class="text-slate-300">Controla proyectos, presupuestos y avances. Ideal para obras y mejoras en tu organización.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl card-hover border-red-500/30 border-t-4">
+                    <div class="bg-red-500/20 text-red-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        👤
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Multi-usuario</h3>
+                    <p class="text-slate-300">Presidente, tesorero y secretario trabajando juntos con permisos personalizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="precios" class="py-20 bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">Planes transparentes y accesibles</h2>
+                <p class="text-xl text-slate-400">Sin sorpresas, sin letras chicas. Cancela cuando quieras.</p>
+            </div>
+
+            <!-- Oferta Especial -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="gradient-green rounded-2xl p-8 text-center shadow-2xl border-2 border-primaryLight">
+                    <div class="text-white text-sm font-bold uppercase mb-2">🎉 Oferta de Lanzamiento</div>
+                    <h3 class="text-4xl font-black text-white mb-4">Primer Mes S/. 99 + Setup GRATIS</h3>
+                    <p class="text-white/90 text-lg mb-4">Ahorra S/. 1,500 en setup inicial • Solo primeros 20 clientes</p>
+                    <div class="flex justify-center gap-4 text-sm text-white/80">
+                        <span>✓ Capacitación incluida</span>
+                        <span>✓ Migración de datos</span>
+                        <span>✓ Soporte prioritario</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Plan Básico -->
+                <div class="glass-card rounded-2xl p-8 card-hover border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Básico</h3>
+                        <p class="text-slate-400 text-sm">Para organizaciones pequeñas</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-5xl font-black text-white mb-2">S/. 199</div>
+                        <div class="text-slate-400">por mes</div>
+                        <div class="text-sm text-primary mt-2">Hasta 100 socios</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Gestión de socios</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Control de aportes</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Reportes en PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>3 usuarios</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Soporte por email</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="block w-full bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-lg font-semibold text-center transition">
+                        Empezar Ahora
+                    </a>
+                </div>
+
+                <!-- Plan Profesional (Destacado) -->
+                <div class="relative">
+                    <div class="absolute -inset-1 gradient-green rounded-2xl blur"></div>
+                    <div class="relative bg-slate-900 rounded-2xl p-8 border-2 border-primary">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="gradient-green px-4 py-1.5 rounded-full text-white text-sm font-bold shadow-lg">
+                                ⭐ Más Popular
+                            </span>
+                        </div>
+                        <div class="text-center mb-6 mt-4">
+                            <h3 class="text-2xl font-bold text-white mb-2">Profesional</h3>
+                            <p class="text-slate-400 text-sm">Para la mayoría de organizaciones</p>
+                        </div>
+                        <div class="text-center mb-8">
+                            <div class="text-5xl font-black text-primary mb-2">S/. 399</div>
+                            <div class="text-slate-400">por mes</div>
+                            <div class="text-sm text-primary mt-2">Hasta 300 socios</div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-slate-300">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span><strong class="text-white">Todo en Básico</strong></span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-300">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Libro caja completo</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-300">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Gestión de proyectos</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-300">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>10 usuarios</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-300">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Soporte prioritario</span>
+                            </li>
+                        </ul>
+                        <a href="#contacto" class="block w-full gradient-green text-white py-3 rounded-lg font-bold text-center transition hover:shadow-lg hover:shadow-primary/50">
+                            Empezar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan Empresarial -->
+                <div class="glass-card rounded-2xl p-8 card-hover border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Empresarial</h3>
+                        <p class="text-slate-400 text-sm">Para grandes organizaciones</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-5xl font-black text-white mb-2">S/. 699</div>
+                        <div class="text-slate-400">por mes</div>
+                        <div class="text-sm text-primary mt-2">Socios ilimitados</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong class="text-white">Todo en Profesional</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Usuarios ilimitados</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Personalización avanzada</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Capacitación presencial</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Soporte 24/7</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="block w-full bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-lg font-semibold text-center transition">
+                        Empezar Ahora
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-slate-400 text-sm">💳 Todos los planes incluyen: Actualizaciones gratuitas • Backups diarios • App móvil</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-xl text-slate-400">Organizaciones que ya confían en TerrasoftGestión</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl border-primary/30 border-l-4">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 gradient-green rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                            CP
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Centro Poblado Esperanza Central</h4>
+                            <p class="text-slate-400">Lima, Perú</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        "Antes perdíamos días enteros organizando información en Excel. Con TerrasoftGestión tenemos todo bajo control: 133 socios registrados, proyectos activos y reportes listos en segundos. <strong class="text-white">La mejor inversión para nuestra organización.</strong>"
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-primary/30 border-l-4">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                            JV
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Junta Vecinal Los Rosales</h4>
+                            <p class="text-slate-400">San Borja, Lima</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        "El soporte de Francisco es excepcional. Nos capacitó en menos de una hora y <strong class="text-white">ahora generamos reportes para las asambleas en minutos</strong>. Los vecinos están muy contentos con la transparencia que logramos."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">Preguntas Frecuentes</h2>
+                <p class="text-xl text-slate-400">Todo lo que necesitas saber</p>
+            </div>
+
+            <div class="space-y-6">
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Necesito conocimientos técnicos para usar el sistema?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        No, TerrasoftGestión está diseñado para ser muy intuitivo. Incluimos capacitación completa y el sistema es tan fácil de usar como Facebook o WhatsApp. Si sabes usar Excel básico, podrás usar nuestro sistema sin problemas.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Qué pasa con mis datos si cancelo la suscripción?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        Tus datos son 100% tuyos. Antes de cancelar, te proporcionamos una exportación completa en Excel con toda tu información. Además, mantenemos tus datos por 30 días adicionales por si cambias de opinión.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Funciona en celulares y tablets?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        Sí, TerrasoftGestión es una Progressive Web App (PWA) que se adapta perfectamente a cualquier dispositivo. Puedes instalarlo en tu celular como una app nativa y funciona incluso con conexión limitada.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Cuánto tiempo toma implementar el sistema?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        El setup inicial toma aproximadamente 15 minutos. Si tienes datos en Excel, podemos migrarlos en 1-2 días. Incluimos 2 sesiones de capacitación de 1 hora cada una para que tu equipo aprenda a usar el sistema.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Puedo probar el sistema antes de comprar?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        ¡Por supuesto! Ofrecemos 30 días de prueba gratuita sin necesidad de tarjeta de crédito. También puedes agendar una demo en vivo de 15 minutos para ver el sistema funcionando con datos reales.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-white list-none">
+                        <span>¿Qué tipo de soporte ofrecen?</span>
+                        <svg class="w-5 h-5 text-primary group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        Ofrecemos soporte por WhatsApp, email y videollamada. Plan Básico: respuesta en 24h. Plan Profesional: respuesta en 12h. Plan Empresarial: soporte prioritario 24/7. Todos incluyen actualizaciones y mejoras gratuitas.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contacto" class="py-20 gradient-bg hero-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">
+                ¿Listo para modernizar tu organización?
+            </h2>
+            <p class="text-xl text-slate-200 mb-8">
+                Únete a las organizaciones que ya confían en TerrasoftGestión
+            </p>
+            
+            <div class="glass-card p-8 rounded-2xl max-w-2xl mx-auto mb-8">
+                <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">30</div>
+                        <div class="text-white text-sm">Días de prueba gratis</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-primary mb-2">S/. 1,500</div>
+                        <div class="text-white text-sm">Ahorro en setup</div>
+                    </div>
+                </div>
+                <div class="border-t border-slate-700 pt-6">
+                    <p class="text-white font-bold mb-4">🎉 Oferta válida solo para los primeros 20 clientes</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/51923732863?text=Hola,%20quiero%20comenzar%20con%20TerrasoftGestión%20-%20Prueba%20Gratis%2030%20Días" target="_blank" class="gradient-green text-white px-8 py-4 rounded-xl font-bold text-lg transition hover:shadow-2xl hover:shadow-primary/50 inline-flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Empezar Prueba Gratis
+                        </a>
+                        <a href="https://wa.me/51923732863?text=Hola,%20quiero%20agendar%20una%20demo%20de%20TerrasoftGestión" target="_blank" class="glass-card text-white px-8 py-4 rounded-xl font-bold text-lg transition hover:bg-white/10 inline-flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            Ver Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 text-sm text-slate-300">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Sin tarjeta de crédito</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Cancela cuando quieras</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Setup en 15 minutos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-primary">Terrasoft</span>
+                        <span class="text-2xl font-light text-white">Gestión</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sistema profesional de gestión para organizaciones peruanas. Hecho con ❤️ en Lima, Perú.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Producto</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#funcionalidades" class="hover:text-primary transition">Funcionalidades</a></li>
+                        <li><a href="#precios" class="hover:text-primary transition">Precios</a></li>
+                        <li><a href="https://wa.me/51923732863?text=Quiero%20una%20demo" target="_blank" class="hover:text-primary transition">Solicitar Demo</a></li>
+                        <li><a href="#contacto" class="hover:text-primary transition">Prueba Gratis</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Soporte</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="https://wa.me/51923732863" target="_blank" class="hover:text-primary transition">Centro de Ayuda</a></li>
+                        <li><a href="mailto:gestionterrasoft.pe@gmail.com" class="hover:text-primary transition">Contacto</a></li>
+                        <li><a href="https://wa.me/51923732863?text=Necesito%20ayuda%20técnica" target="_blank" class="hover:text-primary transition">Soporte Técnico</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="https://wa.me/51923732863" target="_blank" class="hover:text-primary transition">+51 923 732 863</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:gestionterrasoft.pe@gmail.com" class="hover:text-primary transition">gestionterrasoft.pe@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Lima, Perú</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-400 text-sm">
+                    © 2024 TerrasoftGestión by Terrasoft Gestión Perú. Todos los derechos reservados.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/51923732863" target="_blank" class="text-slate-400 hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:gestionterrasoft.pe@gmail.com" class="text-slate-400 hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/51923732863?text=Hola,%20tengo%20una%20consulta%20sobre%20TerrasoftGestión" target="_blank" class="fixed bottom-6 right-6 gradient-green text-white p-4 rounded-full shadow-2xl hover:scale-110 transition z-50 pulse-btn">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
